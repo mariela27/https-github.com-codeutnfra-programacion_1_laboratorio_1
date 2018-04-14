@@ -12,7 +12,18 @@
     *mostrar
     *ordenar
 */
-int buscarLibros(int[], int);
+int buscarLibre(int[], int);
+/** \brief muestra los productos en forma de lista
+ *
+ * \param int[] ids
+ * \param char[][50] descripcion
+ * \param int[] stock
+ * \param float[] precio unitario
+ * \param int cantidad de elementos
+ * \return void
+ *
+ */
+void mostrarProuctos(int[], char[][50], int[], float[], int);
 int main()
 {
     int idProducto[T];
@@ -34,11 +45,8 @@ int main()
                 printf("cargo\n");
 
 
+/*
 
-                do
-                {
-                    printf("Ingrese la posicion: ");
-                    scanf("%f", &posicion);
                     printf("Ingrese ID: ");
                     scanf("%d", &idProducto[posicion-1]);
                     printf("Ingrese descripcion: ");
@@ -49,10 +57,10 @@ int main()
                     printf("Ingrese precio unitario: ");
                     scanf("%d", &precioUnitario[posicion-1]);
 
-                    printf("Desea continuar? (s/n): ");
+
                     seguir= getche();//devuelve un caracter
 
-                }while(seguir=='s');
+
 
                 break;
 
@@ -65,7 +73,7 @@ int main()
 
                 for(i=0; i<T; i++)
                 {
-                    printf("%5d %20s %5d %5.2f\n", idProducto[posicion-1], descripcion[posicion-1], )
+                    printf("%5d %20s %5d %5.2f\n", idProducto[i], descripcion[i], stock[i], precioUnitario[i] )
                 }
                 /*
                 mostrar cada vector paralelo
@@ -79,4 +87,17 @@ int main()
     }
     return 0;
 }
-int buscarLibros(int [], int)
+int buscarLibre(int id[], int tam)
+{
+    int index= -1;
+    int i;
+    for(i=0; i<t; i++)
+    {
+      if(id[i]==0)
+      {
+          index=i;
+          break;
+      }
+    }
+    return index;
+}
